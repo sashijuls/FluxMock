@@ -1,0 +1,148 @@
+/* Student Lifestyle Section Styles */
+
+.student-lifestyle {
+  width: 100%;
+  padding-top: clamp(100px, 10vw, 160px);
+  padding-bottom: clamp(100px, 10vw, 160px);
+  position: relative;
+  background: rgba(20, 20, 22, 0.4);
+}
+
+.student-lifestyle__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.student-lifestyle__heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.student-lifestyle__title {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.student-lifestyle__subtitle {
+  margin-top: 8px;
+  font-size: clamp(1rem, 2.5vw, 1.375rem);
+  font-weight: 600;
+}
+
+.student-lifestyle__description {
+  margin-top: 16px;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.6;
+  max-width: 560px;
+}
+
+.student-lifestyle__moments {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+}
+
+.student-lifestyle__moment {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 28px;
+  border-radius: 1.5rem;
+  background: rgba(28, 28, 31, 0.9);
+  border: 1px solid var(--color-dark-border);
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.student-lifestyle__moment:hover {
+  background: rgba(28, 28, 31, 0.95);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.student-lifestyle__moment-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.student-lifestyle__moment-emoji {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 1rem;
+  background: var(--color-dark-elevated);
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.student-lifestyle__moment-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.student-lifestyle__moment-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  transition: color 0.2s ease;
+}
+
+.student-lifestyle__moment:hover .student-lifestyle__moment-title {
+  color: var(--color-flux-purple-light);
+}
+
+.student-lifestyle__moment-description {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.6;
+}
+
+.student-lifestyle__moment-tag {
+  display: inline-block;
+}
+
+@media (max-width: 1023px) {
+  .student-lifestyle__moments {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .student-lifestyle {
+    padding-top: clamp(80px, 10vw, 120px);
+    padding-bottom: clamp(80px, 10vw, 120px);
+  }
+
+  .student-lifestyle__container {
+    padding: 0 24px;
+  }
+
+  .student-lifestyle__heading {
+    margin-bottom: 48px;
+  }
+
+  .student-lifestyle__title {
+    font-size: clamp(1.5rem, 5vw, 2.25rem);
+  }
+
+  .student-lifestyle__moments {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .student-lifestyle__moment {
+    padding: 24px;
+  }
+}

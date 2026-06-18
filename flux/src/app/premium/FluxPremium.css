@@ -1,0 +1,407 @@
+/* ═══════════════════════════════════════════════════════════════ */
+/* FLUXPREMIUM PAGE STYLES                                         */
+/* ═══════════════════════════════════════════════════════════════ */
+
+/* ─── Page Shell ─────────────────────────────────────────────── */
+
+.premium-page {
+  min-height: 100vh;
+  background-color: var(--color-dark-bg);
+  color: white;
+}
+
+/* ─── Hero Section ───────────────────────────────────────────── */
+
+.premium-hero {
+  position: relative;
+  padding-top: 128px;
+  padding-bottom: 64px;
+  overflow: hidden;
+}
+
+.premium-hero__blob-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 400px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+  background: rgba(123, 97, 255, 0.2);
+  pointer-events: none;
+}
+
+.premium-hero__blob-side {
+  position: absolute;
+  top: 33%;
+  right: 25%;
+  width: 256px;
+  height: 256px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+  background: rgba(245, 158, 11, 0.1);
+  pointer-events: none;
+}
+
+.premium-hero__inner {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+}
+
+.premium-hero__crown {
+  width: 64px;
+  height: 64px;
+  border-radius: 24px;
+  background-color: rgba(245, 158, 11, 0.2);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: float 4s ease-in-out infinite;
+}
+
+.premium-hero__title {
+  font-size: clamp(2.5rem, 6vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.premium-hero__subtitle {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.45);
+  max-width: 440px;
+  line-height: 1.6;
+}
+
+/* Billing toggle */
+.premium-billing-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.premium-billing-toggle__inner {
+  display: flex;
+  padding: 4px;
+  border-radius: 16px;
+  background-color: var(--color-dark-elevated);
+}
+
+.premium-billing-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 24px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  background: none;
+}
+
+.premium-billing-btn:hover {
+  color: white;
+}
+
+.premium-billing-btn--active {
+  background-color: var(--color-flux-primary);
+  color: white;
+  box-shadow: 0 0 20px rgba(123, 97, 255, 0.2);
+}
+
+/* ─── Pricing Section ────────────────────────────────────────── */
+
+.premium-pricing {
+  padding-bottom: 96px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media (min-width: 640px) {
+  .premium-pricing {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+.premium-pricing__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.premium-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .premium-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Individual pricing card wrapper */
+.premium-card-wrap {
+  position: relative;
+}
+
+.premium-card-wrap__glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(123, 97, 255, 0.2), transparent, rgba(255, 75, 124, 0.1));
+  filter: blur(24px);
+  transform: scale(1.05);
+  z-index: -1;
+}
+
+.premium-card-wrap__badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+/* Pricing card itself */
+.premium-card {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100%;
+}
+
+.premium-card--highlighted {
+  border-color: rgba(123, 97, 255, 0.3);
+  box-shadow: 0 0 0 1px rgba(123, 97, 255, 0.3), 0 8px 32px rgba(123, 97, 255, 0.2);
+}
+
+.premium-card__tier {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 500;
+}
+
+.premium-card__price-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.premium-card__price {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.premium-card__price--free    { color: rgba(255, 255, 255, 0.6); }
+.premium-card__price--monthly {
+  background: linear-gradient(135deg, #7b61ff 0%, #c4b5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.premium-card__price--yearly {
+  background: linear-gradient(135deg, #ff6b35 0%, #ff4b7c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.premium-card__period {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 6px;
+}
+
+.premium-card__features {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+}
+
+.premium-card__feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.premium-card__feature-check {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.premium-card__feature-check--included        { background-color: rgba(36, 36, 40, 1); }
+.premium-card__feature-check--included-purple { background-color: rgba(123, 97, 255, 0.2); }
+
+.premium-card__feature-text--included   { color: rgba(255, 255, 255, 0.7); }
+.premium-card__feature-text--excluded   { color: rgba(255, 255, 255, 0.25); text-decoration: line-through; }
+
+.premium-card__check-icon              { color: rgba(255, 255, 255, 0.5); }
+.premium-card__check-icon--highlighted { color: #9D87FF; }
+.premium-card__check-icon--hidden      { color: transparent; }
+
+.premium-card__cta {
+  margin-top: auto;
+}
+
+/* ─── Perks Section ──────────────────────────────────────────── */
+
+.premium-perks {
+  padding: 96px 24px;
+  background-color: rgba(20, 20, 22, 0.4);
+}
+
+@media (min-width: 640px) {
+  .premium-perks {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+.premium-perks__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.premium-perks__heading {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.premium-perks__title {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.65) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.premium-perks__subtitle {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 12px;
+}
+
+.premium-perks__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .premium-perks__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .premium-perks__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+}
+
+/* Perk card */
+.perk-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.perk-card__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.perk-card__icon--purple { background: rgba(123,97,255,0.12); color: #9D87FF; }
+.perk-card__icon--cyan   { background: rgba(0,210,255,0.12);  color: #00D2FF; }
+.perk-card__icon--orange { background: rgba(255,107,53,0.12); color: #FF6B35; }
+.perk-card__icon--green  { background: rgba(16,185,129,0.12); color: #10B981; }
+.perk-card__icon--gold   { background: rgba(245,158,11,0.12); color: #F59E0B; }
+.perk-card__icon--pink   { background: rgba(255,75,124,0.12); color: #FF4B7C; }
+
+.perk-card__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+}
+
+.perk-card__desc {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.6;
+  margin-top: 4px;
+}
+
+/* ─── Final CTA Section ──────────────────────────────────────── */
+
+.premium-cta {
+  padding: 96px 24px;
+}
+
+.premium-cta__inner {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+}
+
+.premium-cta__icon {
+  color: var(--color-flux-gold);
+}
+
+.premium-cta__title {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.65) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.premium-cta__subtitle {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.premium-cta__disclaimer {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.25);
+}

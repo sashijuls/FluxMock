@@ -1,0 +1,472 @@
+/* ═══════════════════════════════════════════════════════════════ */
+/* FLUXSNIPE PAGE STYLES                                           */
+/* ═══════════════════════════════════════════════════════════════ */
+
+/* ─── Page Content Layout ────────────────────────────────────── */
+
+.snipe-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.snipe-cols {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 1024px) {
+  .snipe-cols {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+/* ─── Rate Chart Card ────────────────────────────────────────── */
+
+.snipe-rate-card {
+  padding: 24px;
+}
+
+.snipe-rate-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.snipe-rate-card__left {
+  flex: 1;
+  min-width: 0;
+}
+
+.snipe-rate-card__label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 500;
+}
+
+.snipe-rate-card__amount-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.snipe-rate-card__rate {
+  font-size: 40px;
+  font-weight: 700;
+  color: white;
+  font-family: var(--font-mono);
+  line-height: 1;
+}
+
+.snipe-rate-card__change {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: var(--color-flux-orange);
+}
+
+.snipe-rate-card__updated {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 2px;
+}
+
+.snipe-rate-card__right {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.snipe-rate-card__range-label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.snipe-rate-card__range-value {
+  font-size: 14px;
+  color: white;
+  font-family: var(--font-mono);
+  margin-top: 4px;
+}
+
+/* Chart container */
+.snipe-chart {
+  position: relative;
+  height: 128px;
+}
+
+.snipe-chart__svg {
+  width: 100%;
+  height: 100%;
+}
+
+.snipe-chart__labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding: 0 8px;
+}
+
+.snipe-chart__date-label {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* ─── Snipe Form Card ────────────────────────────────────────── */
+
+.snipe-form-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.snipe-form-card__title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.snipe-form-card__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 12px;
+  background-color: rgba(255, 107, 53, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-flux-orange);
+}
+
+.snipe-form-card__title {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+
+.snipe-form-card__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Field */
+.snipe-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.snipe-field__label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 500;
+}
+
+.snipe-field__input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 16px;
+  background-color: var(--color-dark-elevated);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 12px;
+  height: 52px;
+}
+
+.snipe-field__prefix {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
+  flex-shrink: 0;
+}
+
+.snipe-field__input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  min-width: 0;
+  font-family: var(--font-sans);
+}
+
+.snipe-field__steppers {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.snipe-field__step-btn {
+  width: 20px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  font-size: 10px;
+  transition: color 0.15s ease;
+  line-height: 1;
+}
+
+.snipe-field__step-btn:hover {
+  color: white;
+}
+
+.snipe-field__hint {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.snipe-field__hint--green { color: var(--color-flux-green); }
+.snipe-field__hint--orange { color: var(--color-flux-orange); }
+
+/* Toggle row */
+.snipe-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 16px;
+  background-color: var(--color-dark-elevated);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 12px 16px;
+}
+
+.snipe-toggle-row__left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.snipe-toggle-row__icon {
+  color: var(--color-flux-purple-light);
+}
+
+.snipe-toggle-row__label {
+  font-size: 14px;
+}
+
+.snipe-toggle {
+  width: 36px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: var(--color-flux-primary);
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.snipe-toggle__knob {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: white;
+  margin-left: auto;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+/* Alert row */
+.snipe-alert {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 16px;
+  padding: 12px;
+  background-color: rgba(255, 107, 53, 0.08);
+  border: 1px solid rgba(255, 107, 53, 0.2);
+}
+
+.snipe-alert__icon {
+  color: var(--color-flux-orange);
+  flex-shrink: 0;
+}
+
+.snipe-alert__text {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.snipe-alert__highlight {
+  color: var(--color-flux-orange);
+  font-weight: 600;
+}
+
+/* ─── Active Snipes Column ───────────────────────────────────── */
+
+.snipe-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.snipe-section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+
+.snipe-section-title--spaced {
+  padding-top: 8px;
+}
+
+.snipe-active-card {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.snipe-active-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.snipe-active-card__pair {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.snipe-active-card__target {
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  margin-top: 2px;
+}
+
+.snipe-active-card__progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.35);
+  margin-bottom: 6px;
+}
+
+.snipe-active-card__bar {
+  height: 8px;
+  border-radius: 4px;
+  background-color: var(--color-dark-elevated);
+  overflow: hidden;
+}
+
+.snipe-active-card__fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.7s ease;
+}
+
+.snipe-active-card__fill--purple {
+  background: linear-gradient(90deg, #7B61FF, #9D87FF);
+}
+
+.snipe-active-card__fill--green {
+  background: linear-gradient(90deg, #059669, #10B981);
+}
+
+.snipe-active-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.snipe-active-card__cancel {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--color-flux-pink);
+  transition: opacity 0.2s ease;
+  padding: 0;
+}
+
+.snipe-active-card__cancel:hover {
+  opacity: 0.8;
+}
+
+/* ─── History List ───────────────────────────────────────────── */
+
+.snipe-history-card {
+  overflow: hidden;
+}
+
+.snipe-history-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--color-dark-border);
+}
+
+.snipe-history-row:last-child {
+  border-bottom: none;
+}
+
+.snipe-history-row__status-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.snipe-history-row__status-icon--done {
+  background-color: rgba(16, 185, 129, 0.15);
+}
+
+.snipe-history-row__status-icon--cancelled {
+  background-color: var(--color-dark-elevated);
+}
+
+.snipe-history-row__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.snipe-history-row__pair {
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+}
+
+.snipe-history-row__meta {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.35);
+  margin-top: 1px;
+}
+
+.snipe-history-row__result {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.snipe-history-row__received {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.snipe-history-row__received--done      { color: var(--color-flux-green); }
+.snipe-history-row__received--cancelled { color: rgba(255, 255, 255, 0.3); }

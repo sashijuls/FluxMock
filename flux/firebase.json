@@ -1,0 +1,60 @@
+{
+  "hosting": {
+    "public": "out",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "/dashboard",
+        "destination": "/dashboard/index.html"
+      },
+      {
+        "source": "/dashboard/**",
+        "destination": "/dashboard/index.html"
+      },
+      {
+        "source": "/transfers",
+        "destination": "/transfers/index.html"
+      },
+      {
+        "source": "/transfers/**",
+        "destination": "/transfers/index.html"
+      },
+      {
+        "source": "/snipe",
+        "destination": "/snipe/index.html"
+      },
+      {
+        "source": "/snipe/**",
+        "destination": "/snipe/index.html"
+      },
+      {
+        "source": "/wallet",
+        "destination": "/wallet/index.html"
+      },
+      {
+        "source": "/wallet/**",
+        "destination": "/wallet/index.html"
+      },
+      {
+        "source": "/premium",
+        "destination": "/premium/index.html"
+      },
+      {
+        "source": "/premium/**",
+        "destination": "/premium/index.html"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "**/*.@(js|css|woff2|woff|ttf)",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        ]
+      }
+    ]
+  }
+}

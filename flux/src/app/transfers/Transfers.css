@@ -1,0 +1,446 @@
+/* ═══════════════════════════════════════════════════════════════ */
+/* TRANSFERS PAGE STYLES                                            */
+/* ═══════════════════════════════════════════════════════════════ */
+
+/* ─── Page Content Layout ────────────────────────────────────── */
+
+.transfers-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ─── Stats Row ──────────────────────────────────────────────── */
+
+.transfers-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .transfers-stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.transfers-stat-card {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.transfers-stat-card__label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 500;
+}
+
+.transfers-stat-card__value {
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -0.02em;
+  font-family: var(--font-mono);
+  line-height: 1.1;
+}
+
+.transfers-stat-card__sub {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.transfers-stat-card__sub--green {
+  color: var(--color-flux-green);
+}
+
+/* ─── Two-column layout ──────────────────────────────────────── */
+
+.transfers-cols {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 1024px) {
+  .transfers-cols {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+/* ─── Send Form Card ─────────────────────────────────────────── */
+
+.transfer-form-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.transfer-form-card__title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.transfer-form-card__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 12px;
+  background-color: rgba(255, 75, 124, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-flux-pink);
+}
+
+.transfer-form-card__title {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+
+.transfer-form-card__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ─── Field ──────────────────────────────────────────────────── */
+
+.transfer-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.transfer-field__label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 500;
+}
+
+.transfer-field__input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 16px;
+  background-color: var(--color-dark-elevated);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 12px;
+  height: 52px;
+  transition: border-color 0.2s ease;
+}
+
+.transfer-field__input-row:focus-within {
+  border-color: rgba(255, 75, 124, 0.4);
+}
+
+.transfer-field__prefix {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
+  flex-shrink: 0;
+}
+
+.transfer-field__input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  min-width: 0;
+  font-family: var(--font-sans);
+}
+
+.transfer-field__output {
+  flex: 1;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-flux-pink);
+  line-height: 1;
+}
+
+.transfer-field__currency-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--color-dark-card);
+  border-radius: 10px;
+  padding: 4px 8px;
+  flex-shrink: 0;
+}
+
+.transfer-field__currency-code {
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+}
+
+.transfer-field__hint {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.transfer-field__hint--green { color: var(--color-flux-green); }
+.transfer-field__hint--pink  { color: var(--color-flux-pink);  }
+
+/* ─── Swap arrow ─────────────────────────────────────────────── */
+
+.transfer-swap {
+  display: flex;
+  justify-content: center;
+}
+
+.transfer-swap__btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 12px;
+  background-color: var(--color-dark-elevated);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.4);
+  transition: all 0.2s ease;
+}
+
+.transfer-swap__btn:hover {
+  color: white;
+  border-color: rgba(255, 75, 124, 0.4);
+  background-color: rgba(255, 75, 124, 0.08);
+}
+
+/* ─── Recipient field ────────────────────────────────────────── */
+
+.transfer-recipient {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.transfer-recipient__label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 500;
+}
+
+.transfer-recipient__input {
+  background-color: var(--color-dark-elevated);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 14px 12px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+  font-family: var(--font-sans);
+  height: 52px;
+}
+
+.transfer-recipient__input::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.transfer-recipient__input:focus {
+  border-color: rgba(255, 75, 124, 0.4);
+}
+
+/* ─── Fee summary strip ──────────────────────────────────────── */
+
+.transfer-fee-strip {
+  background-color: rgba(255, 75, 124, 0.06);
+  border: 1px solid rgba(255, 75, 124, 0.15);
+  border-radius: 16px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.transfer-fee-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.transfer-fee-row__label {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.transfer-fee-row__value {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  font-family: var(--font-mono);
+}
+
+.transfer-fee-divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.06);
+  margin: 2px 0;
+}
+
+.transfer-fee-row--total .transfer-fee-row__label {
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+}
+
+.transfer-fee-row--total .transfer-fee-row__value {
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+}
+
+/* ─── Recent Transfers List ──────────────────────────────────── */
+
+.recent-transfers {
+  overflow: hidden;
+}
+
+.recent-transfers__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--color-dark-border);
+}
+
+.recent-transfers__title {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+
+.recent-transfers__see-all {
+  font-size: 12px;
+  color: var(--color-flux-purple-light);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.recent-transfers__see-all:hover {
+  color: white;
+}
+
+/* ─── Transfer rows ──────────────────────────────────────────── */
+
+.transfer-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  border-bottom: 1px solid var(--color-dark-border);
+}
+
+.transfer-row:last-child {
+  border-bottom: none;
+}
+
+.transfer-row:hover {
+  background-color: rgba(36, 36, 40, 0.5);
+}
+
+.transfer-row__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background-color: var(--color-dark-elevated);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.transfer-row__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.transfer-row__name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.transfer-row__name {
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.transfer-row__meta {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.35);
+  margin-top: 2px;
+}
+
+.transfer-row__amount-col {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.transfer-row__amount {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  font-family: var(--font-mono);
+}
+
+.transfer-row__amount--positive { color: var(--color-flux-green); }
+
+.transfer-row__sub {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.25);
+  margin-top: 1px;
+  font-family: var(--font-mono);
+}
+
+/* ─── Footer status strip ────────────────────────────────────── */
+
+.transfer-status-strip {
+  display: flex;
+  gap: 16px;
+  padding: 12px 20px;
+  border-top: 1px solid var(--color-dark-border);
+}
+
+.transfer-status-strip__item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ─── App header pink variant ────────────────────────────────── */
+
+.app-header__icon--pink {
+  background-color: rgba(255, 75, 124, 0.15);
+}
