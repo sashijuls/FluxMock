@@ -2,7 +2,7 @@ import { initializeApp, getApps } from "firebase/app";
 import { getAnalytics, isSupported } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAo2bmmuaymu2ds_slGlz1t0_KYO2OhM_k",
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
   authDomain: "fluxco-2acd4.firebaseapp.com",
   projectId: "fluxco-2acd4",
   storageBucket: "fluxco-2acd4.firebasestorage.app",
